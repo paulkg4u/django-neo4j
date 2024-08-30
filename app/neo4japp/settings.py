@@ -37,8 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_neomodel'
+    'django_neomodel',
+    'user',
 ]
+
+
+# Neo4j Configuration
+
+NEOMODEL_NEO4J_BOLT_URL = 'bolt://neo4j:neo4jAdmin@localhost:7687'
+NEOMODEL_SIGNALS = True
+NEOMODEL_FORCE_TIMEZONE = False
+NEOMODEL_MAX_CONNECTION_POOL_SIZE = 50
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
