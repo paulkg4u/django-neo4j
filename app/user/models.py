@@ -16,6 +16,7 @@ class Person(DjangoNode):
     name = StringProperty()
     age = IntegerProperty()
     friends = RelationshipTo('Person', 'FRIENDS')
+    acted_in = RelationshipFrom('Movie', 'ACTED_IN')
 
     class Meta:
         app_label = 'user'

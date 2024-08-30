@@ -1,0 +1,28 @@
+<!-- person_detail.html -->
+
+{% extends 'base.html' %} {% block content %}
+<h1>{{ person.name }}</h1>
+<h2>Friends:</h2>
+<ul>
+  {% for friend in friends %}
+  <li>
+    <a href="{% url 'person_detail' name=friend.name %}">{{ friend.name }}</a>
+  </li>
+  {% empty %}
+  <li>No friends found.</li>
+  {% endfor %}
+</ul>
+
+<h2>Movies:</h2>
+<ul>
+  {% for movie in movies %}
+  <li>
+    {{movie.title}} - {{movie.year}}
+  </li>
+  {% empty %}
+  <li>No movies found.</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'person_list' %}">Back to List</a>
+
+{% endblock %}
